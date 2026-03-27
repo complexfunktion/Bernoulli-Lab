@@ -688,11 +688,11 @@ function magyarView(cm){
     :`<span class="muted small">まだ投げていません</span>`;
 
   /* 選択肢ボタン */
-  const canChoose=allFlipped&&g.roundResult===null&&!g.done;
-  const choiceButtons=[0.2,0.5,0.8].map(c=>`
-    <button class="choice ${g.guess===c?"selected":""}"
-      data-magyar-guess="${c}"
-      ${!canChoose?"disabled":""}>${formatPct(c)}</button>`).join("");
+const canChoose = allFlipped && g.roundResult === null && !g.done;
+const choiceButtons = [0.2, 0.5, 0.8].map(c => `
+  <button class="choice ${g.guess === c ? "selected" : ""}"
+    data-magyar-guess="${c}"
+    ${!canChoose ? "disabled" : ""}>${c}</button>`).join("");
 
   /* ラウンド結果 */
   let resultBox="";
